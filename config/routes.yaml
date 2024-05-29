@@ -1,0 +1,9 @@
+controllers:
+    resource:
+        path: ../src/Controller/
+        namespace: App\Controller
+    type: attribute
+
+_404:
+    path: /404
+    controller: 'App\Controller\ErrorController::error404'

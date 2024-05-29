@@ -1,0 +1,166 @@
+
+<header class="">
+{# Navbar  #}
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand me-auto"  href=" {{path('home')}} ">
+				<img src="https://media.istockphoto.com/id/1386859812/fr/photo/photos-sur-la-culture-chinoise.jpg?s=1024x1024&w=is&k=20&c=dzBZRs1fyA3sScj3LGAt5zkEaHK04NNEnSjofjeTd64=" height="45" width="45" class="rounded-circle" alt="Nana" loading="lazy"/>
+			</a>
+
+			<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+
+                <div class="offcanvas-header">
+					<h5 class="offcanvas-title mb-0 " id="offcanvasNavbarLabel">Nana</h5>
+					<button type="button" class="btn-close " data-bs-dismiss="offcanvas" aria-label="Close"></button>
+				</div>
+
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+                        {% if app.user %} 
+
+                            <li class="nav-item">
+                                <a href="{{path('home')}}" class="nav-link mx-lg-2 "  >HOME</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{path('about')}}" class="nav-link mx-lg-2">ABOUT</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{path('shown_projects')}}" class="nav-link mx-lg-2">PROJECTS</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{path('app_contact')}}" class="nav-link mx-lg-2">CONTACT</a>
+                            </li>
+                            {# <li class="nav-item">
+                                <a href="{{path('app_register')}}" class="nav-link mx-lg-2">REGISTER</a>
+                            </li> #}
+                            <li class="nav-item">
+                                <a href="{{path('index_projects')}}" class="nav-link mx-lg-2">MANAGE MY PROJECTS</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{path('app_logout')}}" class="nav-link mx-lg-2">LOGOUT</a>
+                            </li>
+                        {% else %}
+                            <li class="nav-item">
+                                <a href="{{path('home')}}" class="nav-link mx-lg-2" >HOME</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{path('about')}}" class="nav-link mx-lg-2">ABOUT</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{path('shown_projects')}}" class="nav-link mx-lg-2">PROJECTS</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{path('app_contact')}}" class="nav-link mx-lg-2">CONTACT</a>
+                            {# </li>
+                                            <li class="nav-item">
+                                <a href="{{path('app_login')}}" class="nav-link mx-lg-2">LOGIN</a>
+                            </li> #}
+                        {% endif %}  
+                    </ul>
+                </div>
+            </div>
+            <a href="{{path('app_login')}}" class="login-button">LOGIN</a>
+
+            <button class="navbar-toggler pe-0 " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </nav>
+{# End Navbar end  #}
+
+{#  Hero section  #}
+    <section class="hero-section">
+        <div class=" container d-flex align-items-center justify-content-center fs-1 text-white flex-column">
+        {% if app.request.getPathInfo() == '/home' %}
+            <h1>Hi, I'm Najwa!</h1>
+            <h2></h2>
+        
+        {% elseif app.request.getPathInfo() == '/about' %}
+            <h1>My Resume</h1>
+            <h2></h2>
+         {% elseif app.request.getPathInfo() == '/shown/projects' %}
+            <h1>My projects</h1>
+            <h2></h2>
+        {% elseif app.request.getPathInfo() == '/contact' %}
+            <h1>Fell free to contact me!</h1>
+            <h2></h2>
+        {% elseif app.request.getPathInfo() == '/login' %}
+            <h1>Sign in!</h1>
+            <h2></h2>
+        {% elseif app.request.getPathInfo() == '/project' %}
+            <h1>HAL SU ISSEO!</h1>
+            <h2></h2>
+        {% else %}  
+            <h1>Hi, I am Najwa!</h1>
+            <h2>Welcome to my website.</h2>
+            
+        {% endif %}
+        </div>
+    </section>
+{#  End Hero section  #}
+
+
+</header>
+
+
+
+{# <header class="">
+    <nav class="navbar navbar-expand navbar-light  d-flex justify-content-center" style="background-color: #e3f2fd;">
+        <span class="navbar-brand">
+        Nana
+        </span>
+        <ul class="navbar-nav">
+
+
+
+            {% if app.user %} 
+
+                <li class="nav-item">
+                    <a href="{{path('home')}}" class="nav-link">HOME</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{path('about')}}" class="nav-link">ABOUT</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{path('shown_projects')}}" class="nav-link">PROJECTS</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{path('app_contact')}}" class="nav-link">CONTACT</a>
+                </li>
+                {# <li class="nav-item">
+                    <a href="{{path('app_register')}}" class="nav-link">REGISTER</a>
+                </li> #}
+                {# <li class="nav-item">
+                    <a href="{{path('index_projects')}}" class="nav-link">MANAGE MY PROJECTS</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{path('app_logout')}}" class="nav-link">LOGOUT</a>
+                </li>
+
+
+
+
+            {% else %}
+                <li class="nav-item">
+                    <a href="{{path('home')}}" class="nav-link">HOME</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{path('about')}}" class="nav-link">ABOUT</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{path('shown_projects')}}" class="nav-link">PROJECTS</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{path('app_contact')}}" class="nav-link">CONTACT</a>
+                </li>
+                                <li class="nav-item">
+                    <a href="{{path('app_login')}}" class="nav-link">LOGIN</a>
+                </li>
+            {% endif %}  
+           
+        </ul>
+    </nav> #}
+
+{# </header> #}
+
+

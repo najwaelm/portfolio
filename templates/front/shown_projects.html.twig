@@ -1,0 +1,25 @@
+{% extends "bootstrap.html.twig" %}
+
+
+{% block body %}
+
+
+<div  id="cardWrapper">
+    {% for key, value in projects %}
+        
+            <div class="card ">
+                <img class="card-img-top" src="{{ value.url }}" alt="image" style=" height:200px">
+                <div class="card-body">
+                    <h5 class="card-title text-center">{{ value.name }}</h5>
+                    <p class="card-text text-center card-text-limit ">
+                        <a href="{{ value.description }}">https://images.unsplash.com/photo-1555231955-348aa2312e19?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D</a>
+                    </p>
+                    <p class="card-text text-center"> {{ value.date|date('d-m-Y') }}</p>
+                </div>
+       
+        </div>
+
+    {% endfor %}
+</div>
+
+{% endblock %}

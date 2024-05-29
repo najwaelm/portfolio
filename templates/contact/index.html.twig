@@ -1,0 +1,13 @@
+
+{% extends 'bootstrap.html.twig' %}
+
+{% block body %}
+    <div class="contactContainer">
+		{{ form_start(form) }}
+		    {{ form_row(form.fullName) }}
+		    {{ form_row(form.email) }}
+		    {{ form_row(form.subject) }}
+		    {{ form_row(form.message) }}
+		{{ form_end(form) }}      
+    </div>
+{% endblock %}

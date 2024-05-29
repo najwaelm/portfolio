@@ -1,0 +1,237 @@
+/* * */
+:root{
+    --color-1: black;
+    --color-2: pink;
+    --color-3: rgb(219, 217, 217);
+    
+}
+*{
+    padding: none;
+    margin: none;
+    text-decoration: none;
+}
+
+
+/* Header */
+    /* navbar  */
+.navbar{
+    background-color:#fff;
+    border: var(--color-2) solid 1px;
+    height: 80px;
+    margin: 20px;
+    border-radius: 16px;
+    --bs-navbar-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org…dth='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.navbar-toggler{
+    border: none !important;
+}
+.navbar-toggler:focus{
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+
+.nav-link{
+    color: var(--color-1);
+    font-weight: 500;
+    position: relative;
+}
+
+
+.nav-link:hover, .nav-link.active{
+    color: var(--color-1);
+}
+
+@media (min-width: 991px){
+    .nav-link::before{
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%);
+        width: 0;
+        height: 2px;
+        background-color: var(--color-2);
+        visibility: none;
+        transition: 0.3s ease-in-out;
+    }
+
+    .nav-link:hover::before, .nav-link.active::before {
+        width: 100%  ;
+        visibility: visible;
+    } 
+}
+
+.login-button{
+    background-color: var(--color-2);
+    color: #fff;
+    font-size: 14px;
+    padding: 6px 15px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: 0.3s background-color;
+}
+
+.login-button:hover{
+    background-color: var(--color-1);
+}
+    /* hero section  */
+.hero-section{
+    background: url(https://images.unsplash.com/photo-1555231955-348aa2312e19?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D) no-repeat center ;
+    background-size: cover;
+    width: 100%;
+    height: 70vh;
+
+    display: flex;
+    justify-content: center; /* Horizontal centering */
+    align-items: center; /* Vertical centering */
+    text-align: center; /* Optional: Center text within the container */
+    position: relative;
+}
+
+.hero-section::before{
+    background-color: rgba(0,0,0,0.4);
+    content:"";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.hero-section .container{
+   height: 70vh;
+   z-index: 1;
+   position: relative;
+}
+.hero-section h1{
+    font-size: 1.5em;
+}
+.hero-section h2{
+    font-size: 1em;
+}
+
+/* Footer */
+footer{
+    background-color: var(--color-3);
+}
+
+/* Home */
+
+/* About */
+
+/* Projects */
+
+#cardWrapper{
+    padding-top: 40px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;  
+}
+
+.card{
+    width: 24rem;
+    margin: 10px 10px 50px 10px;
+}
+.card-text-limit{
+    overflow: hidden; /* Hide any overflowing content */
+    text-overflow: ellipsis; /* Display ellipsis (...) for overflowed text */  
+    white-space: nowrap; /* Prevent wrapping of text onto a new line */
+}
+
+.card-body a {
+    color: var(--color-2);
+    text-decoration: none;
+
+}
+/* Contact */
+
+.contactContainer{
+    padding: 30px 100px;
+}
+.contactBtn{
+    align-content: center;
+    height:  50px;
+    width: 100px;
+    background-color: var(--color-2) !important;
+    color: #fff !important;
+    font-size: 14px !important;
+    padding: 6px 15px !important;
+    border-radius: 50px !important;
+    border: none;
+    display: block;
+    margin: auto;
+}
+
+@media (max-width: 576px) {
+    .contactContainer{
+        padding: 10px 25px;
+    }
+}
+@media (min-width: 992px) {
+    .contactContainer{
+        padding: 30px 300px;
+    }
+}
+/* Sign up  */
+
+/* Log in  */
+.loginContainer{
+    padding: 30px 100px;
+}
+
+.loginBtn{
+    align-content: center;
+    height:  50px;
+    width: 100px;
+    background-color: var(--color-2) !important;
+    color: #fff !important;
+    font-size: 14px !important;
+    padding: 6px 15px !important;
+    
+    border-radius: 50px !important;
+    border: none;
+    display: block;
+    margin: auto;
+}
+
+@media (max-width: 576px) {
+    .loginContainer{
+        padding: 10px 25px;
+    }
+}
+@media (min-width: 992px) {
+    .loginContainer{
+        padding: 30px 300px;
+    }
+}
+/* add a new project  */
+.newProjectContainer{
+    padding: 30px 100px;
+}
+.newProjectBtn{
+    align-content: center;
+    height:  50px;
+    width: 100px;
+    background-color: var(--color-2) !important;
+    color: #fff !important;
+    font-size: 14px !important;
+    padding: 6px 15px !important;
+    border-radius: 50px !important;
+    border: none;
+    display: block;
+    margin: auto;
+}
+
+@media (max-width: 576px) {
+    .newProjectContainer{
+        padding: 10px 25px;
+    }
+}
+@media (min-width: 992px) {
+    .newProjectContainer{
+        padding: 30px 300px;
+    }
+}
+

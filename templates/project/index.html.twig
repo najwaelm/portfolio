@@ -1,0 +1,42 @@
+{% extends "bootstrap.html.twig" %}
+
+{% block body %}
+
+<h1 class="text-center mb-5 mt-5">MY PROJECTS</h1>
+
+<div class="text-center">
+    <a href="{{path("new_project")}}" class="btn btn-outline-primary my-3">ADD A PROJECT</a>
+</div>
+
+<table class="table table-striped align-middle">
+        <thead>
+            <tr>
+                <th>#id</th>
+                <th>nom</th>
+                <th>description</th>
+                <th>date</th>
+                <th>image</th>
+            </tr>
+        </thead>
+    
+
+<tbody>
+    
+    {% for key, value in projects %}
+        <tr>
+            <td>{{value.id}}</td>
+            <td>{{value.name}}</td>
+            <td>{{value.description}}</td>
+            <td>{{value.date|date('d-m-Y')}}</td>
+            <td><img src="{{value.url}}" style=" height:100px; width:12rem"></td>
+            {# <td><img src="{{ value.url }}" style=" height:100px; width:12rem"></td> #}
+            <td>
+                <a href="{{path("update_project", {id: value.id})}}", class="btn btn-outline-warning">UPDATE</a>
+                <a href="{{path("delete_project", {id: value.id})}}", class="btn btn-outline-danger">DELETE</a> 
+            </td> 
+        </tr>
+    {% endfor %}
+</tbody>
+
+</table>
+{% endblock %}

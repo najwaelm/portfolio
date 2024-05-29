@@ -1,0 +1,17 @@
+{% extends "bootstrap.html.twig" %}
+
+{% block body %}
+
+<h1 class="text-center">Update a project!</h1>
+
+    <div class="newProjectContainer">
+		{{ form_start(form) }}
+		    {{ form_row(form.name) }}
+		    {{ form_row(form.description) }}
+		    {{ form_row(form.url) }}
+		    {{ form_row(form.date) }}
+		{{ form_end(form) }}
+        
+    </div>
+
+{% endblock %}
